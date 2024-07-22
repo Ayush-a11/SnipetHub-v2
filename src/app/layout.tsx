@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/pages/Header/page";
+import { HashLoader } from "react-spinners";
+import SideMenuBar from "@/pages/SideMenuBar/page"
 
 
 export const metadata: Metadata = {
@@ -17,7 +19,11 @@ export default function RootLayout({
     <html lang="en">
       <body id="root" className="dark bg-background text-text">
         <Header/>
-        {children}</body>
+        <div className="w-full">
+          <div className="w-1/3"><SideMenuBar/> </div>
+          <div className="w-2/3">{children}</div>
+        </div>
+        </body>
     </html>
   );
 }

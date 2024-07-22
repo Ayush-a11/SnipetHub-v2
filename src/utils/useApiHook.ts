@@ -1,10 +1,10 @@
 import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react'
-import { Accept, AccessToken, BaseUri, ClientId } from './Config';
+import { Accept, AccessToken, BaseUri, ClientId } from '@/utils/Config';
 
 
-function useApiHook(Method,RequestUrl,Body,dep) {
+function useApiHook(Method:string,RequestUrl:string,Body,dep:string) {
 	
 	const [data,setData]=useState([]);
 	const myHeaders = new Headers();

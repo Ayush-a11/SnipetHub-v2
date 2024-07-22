@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useState, useRef, useCallback } from 'react';
-import { BaseUri } from '../CommonUtility/ApiTemplate/Config.js';
-import ApiHook from '../CommonUtility/ApiTemplate/useApiHook.js';
+import { BaseUri } from '@/utils//Config.js';
+import ApiHook from '@/utils//useApiHook.js';
 import Loader from '../CommonUtility/Loader.jsx';
 
 function InfiniteScroll({ devMode:string }) {

@@ -1,5 +1,6 @@
 "use client"
 import Button from '@/utils/Button'
+import Loader from '@/utils/Loader'
 import { faBars, faBug, faClose } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useEffect, useState } from 'react'
@@ -8,6 +9,7 @@ function Header() {
   const [theme, setTheme]=useState()
   const [menu, setMenu] = useState(true);
   const toggleTheme= ()=>{
+	
 	const root= document.querySelector("#root")
 	theme==="dark"?root?.classList.remove("dark"):root?.classList.add("dark")
 	setTheme((prev:string):string =>prev==="dark"?"light":"dark");
@@ -41,6 +43,7 @@ function Header() {
 		<Button variant='icon' className='md:block hidden' text="" onClick={toggleTheme}/>
 		<Button variant="secondary" text="Register"/>
 		<Button  variant="default" text="Login"/>
+		<Loader/>
 	</div>
 
 	</div>
