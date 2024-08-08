@@ -5,18 +5,128 @@
 
 /* Light mode (default) */
 :root {
-  --text: #040316;
-  --background: #fbfbfe;
-  --primary: #2f27ce;
-  --secondary: #dddbff;
-  --accent: #443dff;
+  --text-50: 238 246 246;
+  --text-100: 222 236 237;
+  --text-200: 189 217 219;
+  --text-300: 156 198 201;
+  --text-400: 122 180 184;
+  --text-500: 89 161 166;
+  --text-600: 71 129 133;
+  --text-700: 54 96 99;
+  --text-800: 36 64 66;
+  --text-900: 18 32 33;
+  --text-950: 9 16 17;
+  
+  --background-50: 238 245 246;
+  --background-100: 221 235 238;
+  --background-200: 187 216 221;
+  --background-300: 153 196 204;
+  --background-400: 119 177 187;
+  --background-500: 85 157 170;
+  --background-600: 68 126 136;
+  --background-700: 51 94 102;
+  --background-800: 34 63 68;
+  --background-900: 17 31 34;
+  --background-950: 9 16 17;
+  
+  --primary-50: 238 245 246;
+  --primary-100: 221 236 238;
+  --primary-200: 187 216 221;
+  --primary-300: 153 197 204;
+  --primary-400: 119 178 187;
+  --primary-500: 85 158 170;
+  --primary-600: 68 127 136;
+  --primary-700: 51 95 102;
+  --primary-800: 34 63 68;
+  --primary-900: 17 32 34;
+  --primary-950: 9 16 17;
+  
+  --secondary-50: 246 238 240;
+  --secondary-100: 238 221 225;
+  --secondary-200: 221 187 194;
+  --secondary-300: 204 153 164;
+  --secondary-400: 187 119 134;
+  --secondary-500: 170 85 104;
+  --secondary-600: 136 68 83;
+  --secondary-700: 102 51 62;
+  --secondary-800: 68 34 41;
+  --secondary-900: 34 17 21;
+  --secondary-950: 17 9 10;
+  
+  --accent-50: 246 244 238;
+  --accent-100: 238 233 221;
+  --accent-200: 221 211 187;
+  --accent-300: 204 189 153;
+  --accent-400: 187 168 119;
+  --accent-500: 170 146 85;
+  --accent-600: 136 117 68;
+  --accent-700: 102 87 51;
+  --accent-800: 68 58 34;
+  --accent-900: 34 29 17;
+  --accent-950: 17 15 9;
+  
+    
 }
 
 /* If using the class-based approach for dark mode */
 .dark {
-  --text: #eae9fc;
-  --background: #010104;
-  --primary: #3a31d8;
-  --secondary: #020024;
-  --accent: #0600c2;
+  --text-50: 9 16 17;
+  --text-100: 18 32 33;
+  --text-200: 36 64 66;
+  --text-300: 54 96 99;
+  --text-400: 71 129 133;
+  --text-500: 89 161 166;
+  --text-600: 122 180 184;
+  --text-700: 156 198 201;
+  --text-800: 189 217 219;
+  --text-900: 222 236 237;
+  --text-950: 238 246 246;
+  
+  --background-50: 9 16 17;
+  --background-100: 17 31 34;
+  --background-200: 34 63 68;
+  --background-300: 51 94 102;
+  --background-400: 68 126 136;
+  --background-500: 85 157 170;
+  --background-600: 119 177 187;
+  --background-700: 153 196 204;
+  --background-800: 187 216 221;
+  --background-900: 221 235 238;
+  --background-950: 238 245 246;
+  
+  --primary-50: 9 16 17;
+  --primary-100: 17 32 34;
+  --primary-200: 34 63 68;
+  --primary-300: 51 95 102;
+  --primary-400: 68 127 136;
+  --primary-500: 85 158 170;
+  --primary-600: 119 178 187;
+  --primary-700: 153 197 204;
+  --primary-800: 187 216 221;
+  --primary-900: 221 236 238;
+  --primary-950: 238 245 246;
+  
+  --secondary-50: 17 9 10;
+  --secondary-100: 34 17 21;
+  --secondary-200: 68 34 41;
+  --secondary-300: 102 51 62;
+  --secondary-400: 136 68 83;
+  --secondary-500: 170 85 104;
+  --secondary-600: 187 119 134;
+  --secondary-700: 204 153 164;
+  --secondary-800: 221 187 194;
+  --secondary-900: 238 221 225;
+  --secondary-950: 246 238 240;
+  
+  --accent-50: 17 15 9;
+  --accent-100: 34 29 17;
+  --accent-200: 68 58 34;
+  --accent-300: 102 87 51;
+  --accent-400: 136 117 68;
+  --accent-500: 170 146 85;
+  --accent-600: 187 168 119;
+  --accent-700: 204 189 153;
+  --accent-800: 221 211 187;
+  --accent-900: 238 233 221;
+  --accent-950: 246 244 238;
 }

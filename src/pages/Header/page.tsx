@@ -27,7 +27,7 @@ function Header() {
 	
 	<div className=' md:order-none -order-1'>
 		<ul className="flex md:flex-row flex-col md:space-x-4 space-y-1">
-		<li className="md:hidden block"><FontAwesomeIcon className='text-text' icon={!menu?faBars:faClose} onClick={()=>setMenu((prev)=>!prev)}/>
+		<li className="md:hidden block"><FontAwesomeIcon className='text-text-500' icon={!menu?faBars:faClose} onClick={()=>setMenu((prev)=>!prev)}/>
 		</li>
 		<li className={`${menu?'block':'hidden' } md:block`}>Home</li>
 		<li className={`${menu?'block':'hidden' } md:block`}>ContactUs</li>

@@ -17,11 +17,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body id="root" className="dark bg-background text-text">
+      <body id="root" className="dark bg-background-50 text-text-950">
         <Header/>
-        <div className="w-full">
-          <div className="w-1/3"><SideMenuBar/> </div>
-          <div className="w-2/3">{children}</div>
+        <div className="w-full h-full relative">
+          <div className="w-3/12 fixed top-10 h-full"><SideMenuBar/> </div>
+          <div className="w-9/12">{children}</div>
         </div>
         </body>
     </html>
