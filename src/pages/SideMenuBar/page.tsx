@@ -21,16 +21,18 @@ function page() {
 	},[searchText])
 
   return (
-	<div className="bg-primary-100 h-[93vh] w-full">
-		<div className="flex items-center justify-around pt-5">
-			<Input  placeholder="eg. Infinite Scroll" value={searchText} onChange={(e)=>setSearchText(e.target.value)}/>
+	<div className="bg-primary-100 bg-opacity-10 h-[93vh] w-full">
+		<div className="flex items-center w-full pt-5 space-x-2 place-content-center">
+			<Input  placeholder="eg. Infinite Scroll" value={searchText} onChange={(e)=>setSearchText(e.target.value)}
+			style='md:w-40 w-2/3'
+			/>
 			<Button  variant='default' text="Search" onClick={handleSearch} />
 		</div>
 
-		<div className="flex flex-col my-10">
+		<div className="flex flex-col my-10 overflow-y-scroll">
 			{data && data.map((item,i)=>(
 				<Link href={`/component/${item.id}`}>
-				<div className={`${usePathname()==`/component/${item.id}`?'bg-primary-300':''} m-0.5`}>
+				<div className={`${usePathname()==`/component/${item.id}`?'bg-primary-300':''} mx-5 rounded-md p-2 transition-transform duration-300`}>
 					<span>{item.name}</span>
 					
 				</div>

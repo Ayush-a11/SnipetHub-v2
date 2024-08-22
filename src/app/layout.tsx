@@ -20,8 +20,8 @@ export default function RootLayout({
       <body id="root" className="dark bg-background-50 text-text-950">
         <Header/>
         <div className="w-full h-full relative">
-          <div className="w-3/12 fixed top-10 h-full"><SideMenuBar/> </div>
-          <div className="w-9/12">{children}</div>
+          <div className="w-full md:w-3/12 min-w-80 fixed top-10 h-full"><SideMenuBar/> </div>
+          <div className="md:w-9/12 w-11/12">{children}</div>
         </div>
         </body>
     </html>

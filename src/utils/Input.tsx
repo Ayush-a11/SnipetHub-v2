@@ -7,14 +7,17 @@ function Input({ label = "", style = "", type = "text", placeholder = "", value 
     <div className="">
       
     {label && <div >{label}</div>}
+    <div className="flex justify-between items-center bg-white rounded-md h-8 ">
       <input
         type={type}
-        className={` rounded-sm pl-4  ${style}`}
+        className={`  pl-4 bg-transparent outline-none text-black ${style}`}
         placeholder={placeholder}
         value={value}
 		    onChange={onChange}
         {...props}
       />
+      <span className="bg-slate-400  rounded-md text-black font-semibold px-2 ">CtrlK</span>
+      </div>
     </div>
   );
 }

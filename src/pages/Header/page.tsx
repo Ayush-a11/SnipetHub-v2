@@ -17,7 +17,7 @@ function Header() {
 
 
   return (
-	<div className={`fixed border-b-[0.5px] ${menu?"translate-y-[10%] ":"translate-y-[10%] items-center "}  w-full flex justify-around transition-transform duration-500`}>
+	<div className={`fixed z-10 border-b-[0.5px] ${menu?"translate-y-[10%] ":"translate-y-[10%] items-center "}  w-full flex justify-around transition-transform duration-500`}>
 
 	<div className='flex space-x-1 font-bold'>
 		<FontAwesomeIcon className='text-primary text-xl' icon={faBug}/>

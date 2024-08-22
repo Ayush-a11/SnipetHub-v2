@@ -130,3 +130,14 @@
   --accent-900: 238 233 221;
   --accent-950: 246 244 238;
 }
+
+body::webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+  background-color: #aaa; /* or add it to the track */
+}
+
+/* Add a thumb */
+body::webkit-scrollbar-thumb {
+  background: #000;
+}
