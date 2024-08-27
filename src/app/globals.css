@@ -131,13 +131,14 @@
   --accent-950: 246 244 238;
 }
 
-body::webkit-scrollbar {
-  width: 5px;
-  height: 8px;
-  background-color: #aaa; /* or add it to the track */
+.scrollbar::-webkit-scrollbar {
+  width: 6px ;               /* width of the entire scrollbar */
 }
 
-/* Add a thumb */
-body::webkit-scrollbar-thumb {
-  background: #000;
+.scrollbar::-webkit-scrollbar-track {
+  /* background-color: rgb(var(--primary-200)); */
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgb(var(--secondary-400));    /* color of the scroll thumb */
 }

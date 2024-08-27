@@ -15,14 +15,14 @@ function Button(input:ButtonProps):React.ReactNode {
 
 	const variants={
 		"default":{
-			color:"bg-primary-800 text-text-50",
+			color:"bg-primary-300 text-text-950",
 			size:"h-7 w-24",
-			style:" rounded-sm"
+			style:" rounded-lg font-semibold"
 		},
 		"secondary":{
-			color:"bg-secondary-300 text-text-950",
+			color:"bg-secondary-600 text-text-50",
 			size:"h-7 w-28",
-			style:" rounded-sm"
+			style:" rounded-lg font-semibold"
 
 		},
 		"icon":{

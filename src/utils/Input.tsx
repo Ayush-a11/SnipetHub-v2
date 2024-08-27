@@ -16,7 +16,7 @@ function Input({ label = "", style = "", type = "text", placeholder = "", value 
 		    onChange={onChange}
         {...props}
       />
-      <span className="bg-slate-400  rounded-md text-black font-semibold px-2 ">CtrlK</span>
+      <span className="bg-secondary-600  rounded-md text-text-50 font-semibold px-2 ">CtrlK</span>
       </div>
     </div>
   );

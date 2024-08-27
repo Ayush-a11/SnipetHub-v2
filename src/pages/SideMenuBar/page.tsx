@@ -29,10 +29,10 @@ function page() {
 			<Button  variant='default' text="Search" onClick={handleSearch} />
 		</div>
 
-		<div className="flex flex-col my-10 overflow-y-scroll">
+		<div className="flex flex-col my-10 scrollbar h-[80%] overflow-y-scroll">
 			{data && data.map((item,i)=>(
 				<Link href={`/component/${item.id}`}>
-				<div className={`${usePathname()==`/component/${item.id}`?'bg-primary-300':''} mx-5 rounded-md p-2 transition-transform duration-300`}>
+				<div className={`${usePathname()==`/component/${item.id}`?'bg-primary-300 font-semibold':''} mx-5 rounded-md p-2 transition-transform duration-300`}>
 					<span>{item.name}</span>
 					
 				</div>
