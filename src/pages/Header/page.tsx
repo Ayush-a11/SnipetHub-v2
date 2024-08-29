@@ -17,22 +17,24 @@ function Header() {
 
 
   return (
-	<div className={`fixed z-10 border-b-[0.5px] ${menu?"translate-y-[10%] ":"translate-y-[10%] items-center "}  w-full flex justify-around transition-transform duration-500`}>
-
+	<div className={`fixed z-20 bg-text-100 border-b-[0.5px] flex flex-col w-full transition-transform duration-500`}>
+	<div className='w-full flex justify-around'>	
 	<div className='flex space-x-1 font-bold'>
+		{
+		<FontAwesomeIcon className="md:hidden block text-primary text-xl" onClick={()=>setMenu((prev)=>!prev)} icon={!menu?faBars:faClose}/>	
+	}
 		<FontAwesomeIcon className='text-primary text-xl' icon={faBug}/>
 		<h2>Snippet<span className='text-primary'>Hub</span></h2>
 	</div>
 
 	
-	<div className=' md:order-none -order-1'>
-		<ul className="flex md:flex-row flex-col md:space-x-4 space-y-1">
-		<li className="md:hidden block"><FontAwesomeIcon className='text-text-500' icon={!menu?faBars:faClose} onClick={()=>setMenu((prev)=>!prev)}/>
-		</li>
-		<li className={`${menu?'block':'hidden' } md:block`}>Home</li>
-		<li className={`${menu?'block':'hidden' } md:block`}>ContactUs</li>
-		<li className={`${menu?'block':'hidden' } md:block`}>Features</li>
-		<li className={`${menu?'block':'hidden' } md:hidden`}>
+	<div className='md:block hidden'>
+		<ul className="flex flex-row space-x-4">
+	
+		<li className={``}>Home</li>
+		<li className={``}>ContactUs</li>
+		<li className={``}>Features</li>
+		<li className={``}>
 			<Button variant='icon' className='md:hidden block' text="toggleTheme" onClick={toggleTheme}/>
 		</li>
 		</ul>
@@ -45,7 +47,21 @@ function Header() {
 		<Button  variant="default" text="Login"/>
 		<Loader/>
 	</div>
-
+	</div>
+	{menu &&
+	<div className='md:hidden block'>
+		<ul className="flex flex-col space-y-2">
+		{/* <li className="md:hidden block"><FontAwesomeIcon className='text-text-500' icon={!menu?faBars:faClose} onClick={()=>setMenu((prev)=>!prev)}/>
+		</li> */}
+		<li className={``}>Home</li>
+		<li className={``}>ContactUs</li>
+		<li className={``}>Features</li>
+		<li className={``}>
+			<Button variant='icon' className='md:hidden block' text="toggleTheme" onClick={toggleTheme}/>
+		</li>
+		</ul>
+	</div>
+}			
 	</div>
   )
 }
