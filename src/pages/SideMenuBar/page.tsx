@@ -1,15 +1,15 @@
 "use client"
-import React, { useEffect, useState } from 'react'
+import React, { ChangeEvent, useEffect, useState } from 'react'
 import data from '@/utils/data'
 import Input from '@/utils/Input'
 import Button from '@/utils/Button';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 function page() {
-	const [localData,setLocalData] =useState(data);
-	const [searchText,setSearchText] =useState("");
+	const [localData,setLocalData] =useState<typeof data>(data);
+	const [searchText,setSearchText] =useState<string>("");
 
-	const handleSearch= ()=>{
+	const handleSearch= ():void =>{
 
 		const newData= localData.filter((item)=>item)
 		
@@ -23,10 +23,10 @@ function page() {
   return (
 	<div className="bg-primary-100 bg-opacity-10 h-[93vh] w-full">
 		<div className="flex items-center w-full pt-5 space-x-2 place-content-center">
-			<Input  placeholder="eg. Infinite Scroll" value={searchText} onChange={(e)=>setSearchText(e.target.value)}
-			style='md:w-40 w-2/3'
+			<Input  placeholder="eg. Infinite Scroll" value={searchText} onChange={(e: ChangeEvent<HTMLInputElement>):void => setSearchText(e.target.value)}
+			style='w-[60%]'
 			/>
-			<Button  variant='default' text="Search" onClick={handleSearch} />
+			{/* <Button  variant='secondary' style="w-20" text="Search" onClick={handleSearch} /> */}
 		</div>
 
 		<div className="flex flex-col my-10 scrollbar h-[80%] overflow-y-scroll">

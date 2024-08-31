@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useEffect, useState } from 'react'
 
 function Header() {
-  const [theme, setTheme]=useState()
+  const [theme, setTheme]=useState<string>("")
   const [menu, setMenu] = useState(true);
   const toggleTheme= ()=>{
 	
@@ -33,7 +33,7 @@ function Header() {
 	
 		<li className={``}>Home</li>
 		<li className={``}>ContactUs</li>
-		<li className={``}>Features</li>
+		<li className={``}>MemberShip</li>
 		<li className={``}>
 			<Button variant='icon' className='md:hidden block' text="toggleTheme" onClick={toggleTheme}/>
 		</li>
