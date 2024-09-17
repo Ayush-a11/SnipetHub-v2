@@ -1,5 +1,7 @@
 "use client"
 import React, { ChangeEvent, useEffect, useState } from 'react'
+import { MdMenuOpen } from "react-icons/md";
+
 import data from '@/utils/data'
 import Input from '@/utils/Input'
 import Button from '@/utils/Button';
@@ -8,7 +10,7 @@ import { usePathname } from 'next/navigation';
 function page() {
 	const [localData,setLocalData] =useState<typeof data>(data);
 	const [searchText,setSearchText] =useState<string>("");
-
+    const [sidebarWidth,setSidebarWidth] =useState(true);
 	const handleSearch= ():void =>{
 
 		const newData= localData.filter((item)=>item)
@@ -21,7 +23,9 @@ function page() {
 	},[searchText])
 
   return (
-	<div className="bg-primary-100 bg-opacity-10 h-[93vh] w-full">
+	<div className="flex items-start transition-transform duration-300">
+	<div className={`bg-primary-100 bg-opacity-10 h-[93vh] ${sidebarWidth?'w-full':'w-[0%]'} overflow-hidden`}>
+		
 		<div className="flex items-center w-full pt-5 space-x-2 place-content-center">
 			<Input  placeholder="eg. Infinite Scroll" value={searchText} onChange={(e: ChangeEvent<HTMLInputElement>):void => setSearchText(e.target.value)}
 			style='w-[60%]'
@@ -40,6 +44,10 @@ function page() {
 			))
 		}
 		</div>
+	</div>
+	<div className=''>
+		<button className='text-2xl text-secondary-600' onClick={()=>setSidebarWidth((prev)=>!prev)}><MdMenuOpen/></button>
+	</div>
 	</div>
   )
 }
