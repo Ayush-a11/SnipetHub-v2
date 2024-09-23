@@ -21,7 +21,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body id="root" className="dark bg-background-50 text-text-950">
+      <body id="root" className="dark bg-background-50 text-text-950 h">
         <Header/>
         <div className="w-full h-full relative flex">
           <div className={` ${sidebarWidth?'md:w-3/12 min-w-80':'w-0'} fixed top-10 h-full z-30`}><SideMenuBar setSidebarWidth={setSidebarWidth}/> </div>
