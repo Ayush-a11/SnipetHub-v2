@@ -7,10 +7,10 @@ import Input from '@/utils/Input'
 import Button from '@/utils/Button';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-function page() {
+function page({setSidebarWidth}) {
 	const [localData,setLocalData] =useState<typeof data>(data);
 	const [searchText,setSearchText] =useState<string>("");
-    const [sidebarWidth,setSidebarWidth] =useState(true);
+    // const [sidebarWidth,setSidebarWidth] =useState(false);
 	const handleSearch= ():void =>{
 
 		const newData= localData.filter((item)=>item)
@@ -24,7 +24,7 @@ function page() {
 
   return (
 	<div className="flex items-start transition-transform duration-300">
-	<div className={`bg-primary-100 bg-opacity-10 h-[93vh] ${sidebarWidth?'w-full':'w-[0%]'} overflow-hidden`}>
+	<div className={`bg-primary-100 bg-opacity-10 h-[93vh] overflow-hidden`}>
 		
 		<div className="flex items-center w-full pt-5 space-x-2 place-content-center">
 			<Input  placeholder="eg. Infinite Scroll" value={searchText} onChange={(e: ChangeEvent<HTMLInputElement>):void => setSearchText(e.target.value)}
