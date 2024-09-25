@@ -5,6 +5,7 @@ import Header from "@/pages/Header/page";
 import { HashLoader } from "react-spinners";
 import SideMenuBar from "@/pages/SideMenuBar/page"
 import { useState } from "react";
+import CodeLayout from "@/pages/CodeLayout/page";
 
 
 // export const metadata: Metadata = {
@@ -17,7 +18,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [sidebarWidth,setSidebarWidth] =useState(false);
+  const [sidebarWidth,setSidebarWidth] =useState(true);
 
   return (
     <html lang="en">

@@ -118,7 +118,7 @@
   --secondary-900: 238 221 225;
   --secondary-950: 246 238 240;
   
-  --accent-50: 17 15 9;
+  --accent-50: 15 22 23;
   --accent-100: 34 29 17;
   --accent-200: 68 58 34;
   --accent-300: 102 87 51;
@@ -131,12 +131,16 @@
   --accent-950: 246 244 238;
 }
 
-.scrollbar::-webkit-scrollbar {
+body::-webkit-scrollbar {
   width: 6px ;               /* width of the entire scrollbar */
 }
 
-.scrollbar::-webkit-scrollbar-track {
-  /* background-color: rgb(var(--primary-200)); */
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(var(--secondary-400));    /* color of the scroll thumb */
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 6px ;               /* width of the entire scrollbar */
 }
 
 .scrollbar::-webkit-scrollbar-thumb {
