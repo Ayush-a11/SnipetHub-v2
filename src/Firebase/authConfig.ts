@@ -64,5 +64,5 @@ class FirebaseAuthConfig {
   };
 }
 
-// const authObj = new FirebaseAuthConfig();
-// export default authObj;
+const authObj = new FirebaseAuthConfig();
+export default authObj;

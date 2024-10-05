@@ -9,9 +9,11 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-const LoginModal: React.FC = () => {
+const SignUp: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [firstName, setFirstName] = useState<string>("")
+  const [lastName, setLastName] = useState<string>("")
   const [isModalOpen, setIsModalOpen] = useState<boolean>(true);
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -26,7 +28,7 @@ const LoginModal: React.FC = () => {
     e.preventDefault();
     console.log("Email:", email, "Password:", password);
     
-    // const result = authObj.LoginWithEmailPassword(email, password);
+    const result = authObj.SignUpWithEmailPassword(email, password);
     
     // if(result) {}
     // if(result?.error){
@@ -71,10 +73,28 @@ const LoginModal: React.FC = () => {
               &times;
             </button>
 
-            <h2 className="text-2xl font-semibold text-center mb-6 text-text-900">Login</h2>
+            <h2 className="text-2xl font-semibold text-center mb-6 text-text-900">SignUp</h2>
             
             <form onSubmit={handleSubmit}>
               {/* Email Input */}
+			  <Input
+                label="firstName"
+                type="text"
+                placeholder="Enter your First Name"
+                value={firstName}
+                onChange={handleEmailChange}
+                required
+              />
+
+			<Input
+                label="lastName"
+                type="text"
+                placeholder="Enter your Last Name"
+                value={lastName}
+                onChange={handleEmailChange}
+                required
+              />
+
               <Input
                 label="Email"
                 type="email"
@@ -99,7 +119,7 @@ const LoginModal: React.FC = () => {
                 type="submit"
                 className="w-full mt-4 py-2 bg-primary-300 text-white font-semibold rounded-md hover:bg-primary-400 transition duration-200"
               >
-                Sign In
+                Sign Up
               </button>
             </form>
 
@@ -116,7 +136,7 @@ const LoginModal: React.FC = () => {
               className="w-full flex items-center justify-center py-2 bg-secondary-500 text-text-100 font-semibold rounded-md hover:bg-secondary-300 transition duration-200"
             >
               <FontAwesomeIcon icon={faGoogle} className="mr-2" />
-              Sign in with Google
+              Sign Up with Google
             </button>
           </div>
         </div>
@@ -125,4 +145,4 @@ const LoginModal: React.FC = () => {
   );
 };
 
-export default LoginModal;
+export default SignUp;
