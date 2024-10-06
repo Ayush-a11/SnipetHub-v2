@@ -48,7 +48,7 @@ class FirebaseAuthConfig {
   };
 
   // Sign in with Google
-  signInWithGoogleAuth = (): Promise<string | void | Error> => {
+  signInWithGoogleAuth = async (): Promise<string | void | Error> => {
     const provider = new GoogleAuthProvider();
     return signInWithPopup(this.auth, provider)
       .then((result) => {

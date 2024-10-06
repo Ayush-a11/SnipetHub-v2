@@ -7,6 +7,8 @@ import authObj from "@/Firebase/authConfig";
 import AWN from "awesome-notifications"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { warn } from "console";
+
 
 
 const LoginModal: React.FC = () => {
@@ -22,16 +24,19 @@ const LoginModal: React.FC = () => {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Email:", email, "Password:", password);
     
-    // const result = authObj.LoginWithEmailPassword(email, password);
+    const result = await authObj.LoginWithEmailPassword(email, password);
     
+    console.log(result);
     // if(result) {}
     // if(result?.error){
-      toast("Wow so easy!");
-
+    if(result.error)
+      toast.error(result.message);
+    else
+      toast.success("logged In Successfully")
       console.log('error')
        const awn = new AWN()
        console.log(awn)
@@ -40,11 +45,15 @@ const LoginModal: React.FC = () => {
     // Add form submission logic here (e.g., authentication)
   };
 
-  const handleGoogleSignIn = () => {
+  const handleGoogleSignIn = async() => {
     console.log("Sign in with Google");
-    const result = authObj.signInWithGoogleAuth();
+    const result = await authObj.signInWithGoogleAuth();
     console.log(result);
-    // Implement Google sign-in logic here
+
+    if(result.error)
+      toast.error(result.message);
+    else
+      toast.success("logged In Successfully")
   };
 
   const closeModal = () => {
@@ -93,7 +102,18 @@ const LoginModal: React.FC = () => {
                 onChange={handlePasswordChange}
                 required
               />
-
+              <ToastContainer
+                  position="top-right"
+                  autoClose={5000}
+                  hideProgressBar={false}
+                  newestOnTop={false}
+                  closeOnClick
+                  rtl={false}
+                  pauseOnFocusLoss
+                  draggable
+                  pauseOnHover
+                  theme="colored"
+                  />
               {/* Submit Button */}
               <button
                 type="submit"
