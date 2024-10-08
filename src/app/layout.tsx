@@ -4,8 +4,11 @@ import "./globals.css";
 import Header from "@/pages/Header/page";
 import { HashLoader } from "react-spinners";
 import SideMenuBar from "@/pages/SideMenuBar/page"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CodeLayout from "@/pages/CodeLayout/page";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import firebaseConfig from "@/Firebase/firebaseConfig";
+import { initializeApp } from "firebase/app";
 
 
 // export const metadata: Metadata = {
@@ -19,6 +22,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const [sidebarWidth,setSidebarWidth] =useState(true);
+
+  useEffect(()=>{
+    console.log('hemml')
+    const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+        signInWithEmailAndPassword(auth, "ayush.dimri1@gmail.com", "123456")
+      .then((userCredential) => {
+        // Signed up 
+        const user = userCredential.user;
+
+        console.log('login details',user)
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // ..
+  });
+},[])
 
   return (
     <html lang="en">

@@ -28,7 +28,7 @@ function page({setSidebarWidth}) {
 		
 		<div className="flex items-center w-full pt-5 space-x-2 place-content-center">
 			<Input  placeholder="eg. Infinite Scroll" value={searchText} onChange={(e: ChangeEvent<HTMLInputElement>):void => setSearchText(e.target.value)}
-			style='w-[60%]'
+			style='w-[60%]' isSearch={true}
 			/>
 			{/* <Button  variant='secondary' style="w-20" text="Search" onClick={handleSearch} /> */}
 		</div>
