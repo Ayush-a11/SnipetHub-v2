@@ -4,6 +4,7 @@ import Loader from '@/utils/Loader'
 import { faBars, faBug, faClose } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useEffect, useState } from 'react'
+import Link from '../../../node_modules/next/link'
 
 function Header() {
   const [theme, setTheme]=useState<string>("")
@@ -34,6 +35,7 @@ function Header() {
 		<li className={``}>Home</li>
 		<li className={``}>ContactUs</li>
 		<li className={``}>MemberShip</li>
+		<Link href="/component/DiscussionForum"><li className={``}>Discussion Forum</li></Link>
 		<li className={``}>
 			<Button variant='icon' className='md:hidden block' text="toggleTheme" onClick={toggleTheme}/>
 		</li>
