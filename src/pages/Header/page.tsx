@@ -3,6 +3,7 @@ import Button from '@/utils/Button'
 import Loader from '@/utils/Loader'
 import { faBars, faBug, faClose } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 
 function Header() {
@@ -43,8 +44,12 @@ function Header() {
 
 	<div className="flex space-x-2">
 		<Button variant='icon' className='md:block hidden' text="" onClick={toggleTheme}/>
+		<Link href="/SignUp">
 		<Button variant="secondary" text="Register"/>
+		</Link>
+		<Link href="/Login">
 		<Button  variant="default" text="Login"/>
+		</Link>
 		<Loader/>
 	</div>
 	</div>
