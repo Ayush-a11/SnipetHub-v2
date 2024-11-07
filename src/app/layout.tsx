@@ -9,6 +9,8 @@ import CodeLayout from "@/pages/CodeLayout/page";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import firebaseConfig from "@/Firebase/firebaseConfig";
 import { initializeApp } from "firebase/app";
+import { Provider } from 'react-redux';
+import store from "@/utils/Store/store";
 
 
 // export const metadata: Metadata = {
@@ -23,28 +25,12 @@ export default function RootLayout({
 }>) {
   const [sidebarWidth,setSidebarWidth] =useState(true);
 
-  useEffect(()=>{
-    console.log('hemml')
-    const app = initializeApp(firebaseConfig);
-        const auth = getAuth();
-        signInWithEmailAndPassword(auth, "ayush.dimri1@gmail.com", "123456")
-      .then((userCredential) => {
-        // Signed up 
-        const user = userCredential.user;
-
-        console.log('login details',user)
-        // ...
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // ..
-  });
-},[])
+ 
 
   return (
     <html lang="en">
       <body id="root" className="dark bg-background-50 text-text-950">
+      <Provider store={store}>
         <Header/>
         <div className="w-full h-full relative flex">
           <div className={` ${sidebarWidth?'md:w-3/12 min-w-80':'w-0'} fixed top-10 h-full z-30`}><SideMenuBar setSidebarWidth={setSidebarWidth}/> </div>
@@ -53,7 +39,9 @@ export default function RootLayout({
           
           </div>
         </div>
+      </Provider>
         </body>
+
     </html>
   );
 }
