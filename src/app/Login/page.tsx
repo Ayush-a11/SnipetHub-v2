@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState } from "react";
 import Input from "@/utils/Input"; // Assuming your custom Input component is in the same directory
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
@@ -8,6 +9,11 @@ import AWN from "awesome-notifications"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { warn } from "console";
+import { useDispatch } from "react-redux";
+import { save } from "@/utils/Store/authSlice";
+import { redirect } from 'next/navigation'
+import { NextResponse } from "next/server";
+import { useRouter } from "next/navigation";
 
 
 
@@ -15,6 +21,8 @@ const LoginModal: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [isModalOpen, setIsModalOpen] = useState<boolean>(true);
+  const dispatch = useDispatch()
+  const router =useRouter();
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
@@ -47,17 +55,26 @@ const LoginModal: React.FC = () => {
 
   const handleGoogleSignIn = async() => {
     console.log("Sign in with Google");
-    const result = await authObj.signInWithGoogleAuth();
-    console.log(result);
+    const data = await authObj.signInWithGoogleAuth();
+    console.log(data);
 
-    if(result.error)
-      toast.error(result.message);
+    if(data.error)
+      toast.error(data.message);
     else
+
       toast.success("logged In Successfully")
+      dispatch(save.login(data));
+      // NextResponse.next()
+      
+      router.back();
+
   };
 
   const closeModal = () => {
-    setIsModalOpen(false);
+
+    // setIsModalOpen(false);
+    router.back()
+
   };
 
   return (

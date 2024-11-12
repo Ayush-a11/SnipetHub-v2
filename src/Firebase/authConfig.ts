@@ -55,7 +55,7 @@ class FirebaseAuthConfig {
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const user = result.user;
         console.log('Google login details', user);
-        return user.uid;
+        return user;
       })
       .catch((error) => {
         console.error('Google sign in error', error);

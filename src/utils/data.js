@@ -1,63 +1,43 @@
 
 // sidebar Menu items----------------------------------------------------------------------
 const data = [
-  {
-    id: "InfiniteScroll",
-    name: "Infinite Scroll",
-  },
-  {
-    id: "DragNDrop",
-    name: "Drag & Drop",
-  },
-  {
-    id: "Carousel",
-    name: "Responsive Carousel",
-  },
-  {
-    id: "TypingText",
-    name: "Typing Text",
-  },
-  {
-    id: "DragNDrop",
-    name: "Drag & Drop",
-  },
-  {
-    id: "DynamicTab",
-    name: "Dynamic Tab",
-  },
-  {
-    id: "Accordion",
-    name: "Accordion",
-  },
-  {
-    id: "InfiniteScroll",
-    name: "Infinite Scroll",
-  },
-  {
-    id: "DragNDrop",
-    name: "Drag & Drop",
-  },
-  {
-    id: "Carousel",
-    name: "Responsive Carousel",
-  },
-  {
-    id: "TypingText",
-    name: "Typing Text",
-  },
-  {
-    id: "DragNDrop",
-    name: "Drag & Drop",
-  },
-  {
-    id: "DynamicTab",
-    name: "Dynamic Tab",
-  },
-  {
-    id: "Accordion",
-    name: "Accordion",
-  }
+  
 
+  {
+    id: "Carousel",
+    name: "Responsive Carousel",
+    isRestricted : false,
+
+  },
+  {
+    id: "DynamicTab",
+    name: "Dynamic Tab",
+    isRestricted : false,
+
+  },
+  {
+    id: "Accordion",
+    name: "Accordion",
+    isRestricted : false,
+
+  },
+  {
+    id: "DragNDrop",
+    name: "Drag & Drop",
+    isRestricted : true,
+
+  },
+  {
+    id: "TypingText",
+    name: "Typing Text",
+    isRestricted : true,
+  },
+  {
+    id: "InfiniteScroll",
+    name: "Infinite Scroll",
+    isRestricted : true,
+  },
+ 
 ];
 // carousel Images-------------------------------------------------------------------------
 const carouselImages = [

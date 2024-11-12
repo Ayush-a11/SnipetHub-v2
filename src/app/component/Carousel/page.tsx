@@ -1,12 +1,13 @@
 "use client"
 import CodeLayout from '@/pages/CodeLayout/page'
 import { carouselImages } from '@/utils/data'
+import useProtectedRoute from '@/utils/useProtectedRoute'
 import React, { useEffect, useState } from 'react'
 
 function Carousel({devMode=false}) {
 	
 	const imageArr = carouselImages
-
+    // const protectRoute= useProtectedRoute();
 	const [currentTab, setCurrentTab] = useState(imageArr[0].id)
 	const [CurrentIndex,setCurrentIndex] = useState(0)
 	// console.log(CurrentIndex,imageArr.length)
